@@ -41,7 +41,7 @@
 }
 .style-switcher h4{
     margin: 0 0 10px;
-    color: var(--text-back-700);
+    color: var(--text-black-700);
     font-weight: 600;
     font-size: 16px;
     text-transform: capitalize;
