@@ -68,3 +68,29 @@ document.querySelector('#contact-submit').addEventListener('click', () =>{
 
 })
 */
+
+const nav = document.querySelector('.nav');
+const navList = nav.querySelectorAll('li');
+const totalNavList = navList.length;
+
+for(let i = 0; i < totalNavList; i++){
+    const a = navList[i].querySelector('a');
+    a.addEventListener('click', () => {
+        for(let j = 0; j < totalNavList; j++){
+            navList[j].querySelector('a').classList.remove('active');
+        }
+        a.classList.add('active');
+    })
+}
+
+
+const allSection = document.querySelectorAll('.section');
+const navTogglerBtn = document.querySelector('.nav-toggler');
+const aside = document.querySelector('.aside');
+navTogglerBtn.addEventListener('click', () => {
+    aside.classList.toggle('open');
+    navTogglerBtn.classList.toggle('open');
+    for(let i = 0; i < allSection.length; i++){
+        allSection[i].classList.toggle('open');
+    }
+})
