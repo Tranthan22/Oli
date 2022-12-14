@@ -673,6 +673,10 @@ color: #ffffff;
     .home .home-img{
         display: none;
     }
+    .frame{
+        width: fit-content;
+        height: fit-content;
+    }
 }
 @media(max-width : 767px){
     .contact .contact-form .col-6,
@@ -688,9 +692,5 @@ color: #ffffff;
     }
     .section.open{
         padding-left: 15px;
-    }
-    .frame{
-        width: 100%;
-        height: auto;
     }
 }
