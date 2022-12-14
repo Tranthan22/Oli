@@ -409,6 +409,7 @@ h3.my-profession{
 .about .about-content .experience h3{
     color: var(--text-black-900);
 }
+.about .about-content .experience a,
 .about .about-content .education a{
     color: var(--skin-color);
 }
