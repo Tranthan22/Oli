@@ -639,7 +639,7 @@ color: #ffffff;
         left: -270px;
     }
     .main-container{
-        padding-left: 15px;
+        padding-left: 0;
     }
     .aside .nav-toggler{
         display: flex;
@@ -674,8 +674,8 @@ color: #ffffff;
         display: none;
     }
     .frame{
-        width: fit-content;
-        height: fit-content;
+        width: 100%;
+        height: 100%;
     }
 }
 @media(max-width : 767px){
