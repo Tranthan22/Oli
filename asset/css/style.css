@@ -112,6 +112,10 @@ ul{
 .shadow-dark{
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
+.frame{
+    width: 100%;
+    height: 100%;
+ }
 /*aside*/
 .aside{
     width: 270px;
@@ -405,8 +409,7 @@ h3.my-profession{
 .about .about-content .experience h3{
     color: var(--text-black-900);
 }
-.about .about-content .education a,
-.about .about-content .experience a{
+.about .about-content .education a{
     color: var(--skin-color);
 }
 .about .about-content h3 .title{
@@ -682,5 +685,8 @@ color: #ffffff;
     .about .about-content .personal-info{
         flex: 0 0 100%;
         max-width: 100%;
+    }
+    .section.open{
+        padding-left: 0;
     }
 }
