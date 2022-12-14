@@ -68,7 +68,7 @@ document.querySelector('#contact-submit').addEventListener('click', () =>{
 
 })
 */
-
+/* active current page */
 const nav = document.querySelector('.nav');
 const navList = nav.querySelectorAll('li');
 const totalNavList = navList.length;
@@ -82,7 +82,44 @@ for(let i = 0; i < totalNavList; i++){
         a.classList.add('active');
     })
 }
-
+window.addEventListener('scroll', () =>{
+    const home = document.getElementById('home');
+    const about = document.getElementById("about");
+    const services = document.getElementById('services');
+    const portfolio = document.getElementById('portfolio');
+    const contact = document.getElementById('contact');
+    //console.log(home.scrollTop);
+    if(home.scrollTop < window.innerHeight/2){
+        for(let j = 0; j < totalNavList; j++){
+            navList[j].querySelector('a').classList.remove('active');
+        }
+        navList[0].querySelector('a').classList.add('active');
+    }
+    if(/*about.scrollTop < window.innerHeight/2*/window.pageYOffset > 450 && window.pageYOffset < 2000){
+        for(let j = 0; j < totalNavList; j++){
+            navList[j].querySelector('a').classList.remove('active');
+        }
+        navList[1].querySelector('a').classList.add('active');
+    }
+    if(/*services.scrollTop < window.innerHeight/2*/window.pageYOffset > 2000 && window.pageYOffset < 2850){
+        for(let j = 0; j < totalNavList; j++){
+            navList[j].querySelector('a').classList.remove('active');
+        }
+        navList[2].querySelector('a').classList.add('active');
+    }
+    if(window.pageYOffset > 2850 && window.pageYOffset < 3700){
+        for(let j = 0; j < totalNavList; j++){
+            navList[j].querySelector('a').classList.remove('active');
+        }
+        navList[3].querySelector('a').classList.add('active');
+    }
+    if(window.pageYOffset > 3700){
+        for(let j = 0; j < totalNavList; j++){
+            navList[j].querySelector('a').classList.remove('active');
+        }
+        navList[4].querySelector('a').classList.add('active');
+    }
+})
 
 const allSection = document.querySelectorAll('.section');
 const navTogglerBtn = document.querySelector('.nav-toggler');
@@ -94,3 +131,5 @@ navTogglerBtn.addEventListener('click', () => {
         allSection[i].classList.toggle('open');
     }
 })
+
+//0 450 2000 2850 3700
