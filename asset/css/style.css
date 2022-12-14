@@ -639,7 +639,7 @@ color: #ffffff;
         left: -270px;
     }
     .main-container{
-        padding-left: 0;
+        padding-left: 15px;
     }
     .aside .nav-toggler{
         display: flex;
