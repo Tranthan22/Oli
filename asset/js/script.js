@@ -72,6 +72,71 @@ document.querySelector('#contact-submit').addEventListener('click', () =>{
 const nav = document.querySelector('.nav');
 const navList = nav.querySelectorAll('li');
 const totalNavList = navList.length;
+const allSection = document.querySelectorAll('.section');
+const totolSection = allSection.length;
+for(let i = 0; i < totalNavList; i++){
+    const a = navList[i].querySelector('a');
+    a.addEventListener('click', () => {
+        for(let i = 0; i < totolSection; i++){
+            allSection[i].classList.remove('back-section');
+        }
+        for(let j = 0; j < totalNavList; j++){
+            if(navList[j].querySelector('a').classList.contains("active")){
+                allSection[j].classList.add("back-section")
+            }
+            navList[j].querySelector('a').classList.remove('active');
+        }
+        a.classList.add('active');
+        showSection(a);
+        if(window.innerWidth < 1200){
+            asideSectionTogglerBtn();
+        }
+    })
+}
+function showSection(element){
+    for(let i = 0; i < totolSection; i++){
+        allSection[i].classList.remove('active');
+    }
+    const target = element.getAttribute("href").split("#")[1];
+    document.querySelector("#" + target).classList.add("active");
+}
+function updateNav(element){
+    for(let i = 0; i < totalNavList; i++){
+        navList[i].querySelector('a').classList.remove('active');
+        const target = element.getAttribute("href").split("#")[1];
+        if(target === navList[i].querySelector('a').getAttribute('href').split("#")[1]){
+            navList[i].querySelector('a').classList.add('active');
+        }
+    }
+}
+document.querySelector(".more-about").addEventListener("click", function (){
+    showSection(this);
+    updateNav(this);
+})
+
+
+
+///
+
+const navTogglerBtn = document.querySelector('.nav-toggler');
+const aside = document.querySelector('.aside');
+navTogglerBtn.addEventListener('click', () => {
+    asideSectionTogglerBtn();
+    })
+function asideSectionTogglerBtn(){
+    aside.classList.toggle('open');
+    navTogglerBtn.classList.toggle('open');
+    for(let i = 0; i < totolSection; i++){
+        allSection[i].classList.toggle('open');
+        nav
+    }
+}
+
+
+/*
+const nav = document.querySelector('.nav');
+const navList = nav.querySelectorAll('li');
+const totalNavList = navList.length;
 
 for(let i = 0; i < totalNavList; i++){
     const a = navList[i].querySelector('a');
@@ -95,13 +160,13 @@ window.addEventListener('scroll', () =>{
         }
         navList[0].querySelector('a').classList.add('active');
     }
-    if(/*about.scrollTop < window.innerHeight/2*/window.pageYOffset > 450 && window.pageYOffset < 2000){
+    if(window.pageYOffset > 450 && window.pageYOffset < 2000){
         for(let j = 0; j < totalNavList; j++){
             navList[j].querySelector('a').classList.remove('active');
         }
         navList[1].querySelector('a').classList.add('active');
     }
-    if(/*services.scrollTop < window.innerHeight/2*/window.pageYOffset > 2000 && window.pageYOffset < 2850){
+    if(window.pageYOffset > 2000 && window.pageYOffset < 2850){
         for(let j = 0; j < totalNavList; j++){
             navList[j].querySelector('a').classList.remove('active');
         }
@@ -119,17 +184,4 @@ window.addEventListener('scroll', () =>{
         }
         navList[4].querySelector('a').classList.add('active');
     }
-})
-
-const allSection = document.querySelectorAll('.section');
-const navTogglerBtn = document.querySelector('.nav-toggler');
-const aside = document.querySelector('.aside');
-navTogglerBtn.addEventListener('click', () => {
-    aside.classList.toggle('open');
-    navTogglerBtn.classList.toggle('open');
-    for(let i = 0; i < allSection.length; i++){
-        allSection[i].classList.toggle('open');
-    }
-})
-
-//0 450 2000 2850 3700
+})*/
