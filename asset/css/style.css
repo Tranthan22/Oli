@@ -427,16 +427,18 @@ h3.my-profession{
     line-height: 40px;
 }
 .about .about-content .education,
-.about .about-content .experience{
+.about .about-content .certification{
     flex: 0 0 50%;
     max-width: 50%;
     margin-top: 30px;
 }
 .about .about-content .education h3,
+.about .about-content .certification h3,
 .about .about-content .experience h3{
     color: var(--text-black-900);
 }
 .about .about-content .experience a,
+.about .about-content .certification a,
 .about .about-content .education a{
     color: var(--skin-color);
 }
@@ -493,6 +495,7 @@ h3.my-profession{
 .about .about-content .timeline .timeline-date .fa{
     margin-right: 5px;
 }
+
 .about .about-content .timeline .timeline-title{
     font-weight: 700;
     font-size: 18px;

@@ -47,7 +47,7 @@ window.addEventListener('load', () => {
 // embeding from github
 
 var typing = new Typed('.typing', {
-    strings: ["Engineer", "Web Developer", "Electronics Designer"],
+    strings: ["Embedded Engineer", "Electronics Designer"],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true
